@@ -136,7 +136,35 @@ function lfo(param, rate, depth) {
 }
 
 /* Klangdefinitionen. build() verbindet alles mit `out` und gibt die zu stoppenden Quellen zurück. */
+/* Satire-Kachel: echte Rede als Audiodatei. Ein <audio>-Element wird über die
+   Web Audio API geleitet, damit Lautstärke und Sleep-Timer wie bei den anderen Klängen wirken. */
+let speechEl = null;
+let speechSrc = null;
+let speechOwner = 0;
+
 const SOUNDS = [
+  {
+    id: 'xi', name: 'Xi-Rede (APEC)', icon: '🎤', image: 'media/trump-doesend.jpg', feature: true,
+    sub: '28 Minuten Grundsatzrede – garantiert einschläfernd',
+    build(out) {
+      if (!speechEl) {
+        speechEl = new Audio('media/xi-apec-2015.mp3');
+        speechEl.loop = true;
+        speechEl.preload = 'none';
+        speechSrc = ctx.createMediaElementSource(speechEl);
+      }
+      const token = ++speechOwner;
+      speechSrc.connect(out);
+      speechEl.play().catch(() => {});
+      return [{
+        stop() {
+          try { speechSrc.disconnect(out); } catch { /* schon getrennt */ }
+          // nur pausieren, wenn nicht inzwischen neu gestartet wurde; Position bleibt erhalten
+          if (token === speechOwner) speechEl.pause();
+        },
+      }];
+    },
+  },
   {
     id: 'rain', name: 'Regen', icon: '🌧️',
     build(out) {
@@ -277,11 +305,19 @@ function renderSounds() {
   const grid = $('#soundGrid');
   SOUNDS.forEach(sound => {
     const el = document.createElement('div');
-    el.className = 'sound';
+    el.className = 'sound' + (sound.feature ? ' feature' : '');
+    if (sound.image) {
+      el.style.backgroundImage =
+        `linear-gradient(to top, rgba(11,16,38,.95) 15%, rgba(11,16,38,.1) 75%), url("${sound.image}")`;
+    }
     el.innerHTML = `
+      ${sound.feature ? '<span class="zzz" aria-hidden="true">💤</span>' : ''}
       <button class="sound-toggle" aria-pressed="false">
         <span class="sound-icon" aria-hidden="true">${sound.icon}</span>
-        <span class="sound-name">${sound.name}</span>
+        <span>
+          <span class="sound-name">${sound.name}</span>
+          ${sound.sub ? `<span class="sound-sub">${sound.sub}</span>` : ''}
+        </span>
       </button>
       <input type="range" min="0" max="1" step="0.01" aria-label="Lautstärke ${sound.name}">`;
     const btn = $('.sound-toggle', el);

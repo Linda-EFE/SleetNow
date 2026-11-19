@@ -1,5 +1,8 @@
-const CACHE = 'sleetnow-v1';
-const FILES = ['./', 'index.html', 'style.css', 'app.js', 'manifest.webmanifest', 'icons/icon.svg'];
+const CACHE = 'sleetnow-v2';
+const FILES = [
+  './', 'index.html', 'style.css', 'app.js', 'manifest.webmanifest', 'icons/icon.svg',
+  'media/trump-doesend.jpg',
+];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
@@ -19,8 +22,11 @@ self.addEventListener('fetch', e => {
   e.respondWith(
     fetch(e.request)
       .then(res => {
-        const copy = res.clone();
-        caches.open(CACHE).then(c => c.put(e.request, copy));
+        // nur vollständige Antworten cachen (Audio kommt oft als 206-Teilantwort)
+        if (res.status === 200) {
+          const copy = res.clone();
+          caches.open(CACHE).then(c => c.put(e.request, copy)).catch(() => {});
+        }
         return res;
       })
       .catch(() => caches.match(e.request))

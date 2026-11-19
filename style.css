@@ -84,6 +84,18 @@ h2 { font-size: 1.05rem; margin: 0 0 8px; font-weight: 600; }
 }
 .sound-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 8px; }
 .sound-icon { font-size: 1.6rem; }
+.sound.feature {
+  grid-column: 1 / -1; min-height: 200px; justify-content: flex-end; position: relative;
+  background-size: cover; background-position: center 25%;
+}
+.sound-sub { display: block; font-size: .8rem; color: var(--muted); }
+.zzz {
+  position: absolute; top: 12px; right: 14px; font-size: 1.6rem;
+  animation: zzz 3s ease-in-out infinite;
+}
+@keyframes zzz { 0%, 100% { transform: translateY(0); opacity: .6; } 50% { transform: translateY(-8px); opacity: 1; } }
+.credits { font-size: .72rem; color: var(--muted); opacity: .8; margin: -4px 0 16px; }
+.credits a { color: inherit; }
 .sound-name { font-weight: 500; }
 .sound input[type=range] { width: 100%; accent-color: var(--accent); }
 .sound:not(.on) input[type=range] { opacity: .35; }
