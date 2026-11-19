@@ -4,7 +4,7 @@ Eine kleine Web-App zum Einschlafen. Sie läuft im Browser auf Handy und Desktop
 
 ## Funktionen
 
-- **Satire-Kachel „Xi-Rede (APEC)“**: eine echte, 28 Minuten lange Grundsatzrede zum Einschlafen. Als Hintergrund dient ein Foto von Trump mit geschlossenen Augen.
+- **Satire-Kachel „Xi-Rede (APEC)“**: eine echte, 28 Minuten lange Grundsatzrede zum Einschlafen. Als Hintergrund dient eine gezeichnete Karikatur des schlafenden Trump.
 - **Einschlafklänge**: Regen, Meer, Wind, Kamin, rosa, braunes und weißes Rauschen sowie ein tiefer Ton. Die Klänge lassen sich frei mischen, jeder hat eine eigene Lautstärke. Alle Klänge werden live mit der Web Audio API erzeugt, Audiodateien gibt es keine.
 - **Sleep-Timer**: 15 bis 90 Minuten. Zum Ende hin werden die Klänge sanft ausgeblendet (bis zu 3 Minuten).
 - **Nachtmodus**: schwarzer Bildschirm mit einer schwach roten Uhr. Der Bildschirm bleibt dabei an (Wake Lock).
@@ -31,7 +31,7 @@ Dann <http://localhost:8000> öffnen. Für die Installation als App auf dem Hand
 ## Quellen der Medien
 
 - `media/xi-apec-2015.mp3`: Xi Jinping, Grundsatzrede beim APEC CEO Summit in Manila am 18.11.2015. Philippine Government / Radio Television Malacañang, **gemeinfrei**, über [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:China_President_Xi_Jinping_-_Keynote_Speech_-_APEC_Business_Forum_-_Manila,_Philippines_-18_November_2015.webm). Nur die Tonspur, auf die Rede selbst gekürzt (Moderation entfernt).
-- `media/trump-doesend.jpg`: „Trump smiling with eyes closed“ von Marc Nozell (2016), [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/), über [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Trump_smiling_with_eyes_closed.jpg). Zugeschnitten und verkleinert. Trump lacht auf dem Foto, er schläft nicht. Die Kachel ist Satire.
+- `media/trump-schlaeft.svg`: eigene Zeichnung für SleetNow, eine satirische Karikatur und kein Foto.
 
 ## Dateien
 

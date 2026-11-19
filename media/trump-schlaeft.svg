@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <!-- Satirische Karikatur: schlafender Politiker bei einer langen Rede. Eigene Zeichnung für SleetNow. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#26306a"/>
+      <stop offset="1" stop-color="#0b1026"/>
+    </linearGradient>
+    <radialGradient id="face" cx=".45" cy=".4" r=".7">
+      <stop offset="0" stop-color="#f7b673"/>
+      <stop offset="1" stop-color="#e08e45"/>
+    </radialGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbe9a0"/>
+      <stop offset=".6" stop-color="#f2cf5b"/>
+      <stop offset="1" stop-color="#d9ad3c"/>
+    </linearGradient>
+    <linearGradient id="suit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#26335f"/>
+      <stop offset="1" stop-color="#141c3a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Hintergrund -->
+  <rect width="900" height="500" fill="url(#bg)"/>
+  <g fill="#fff">
+    <circle cx="90" cy="70" r="2" opacity=".7"/>
+    <circle cx="180" cy="150" r="1.5" opacity=".5"/>
+    <circle cx="760" cy="60" r="2" opacity=".6"/>
+    <circle cx="830" cy="190" r="1.5" opacity=".5"/>
+    <circle cx="660" cy="120" r="1.2" opacity=".5"/>
+    <circle cx="240" cy="40" r="1.2" opacity=".6"/>
+  </g>
+  <path d="M120 120 a46 46 0 1 0 50 62 a38 38 0 0 1 -50 -62z" fill="#e9e4ff" opacity=".85"/>
+
+  <!-- Körper -->
+  <path d="M150 500 C160 400 290 345 450 340 C610 345 740 400 750 500 Z" fill="url(#suit)"/>
+  <path d="M404 340 L450 430 L496 340 Z" fill="#f4f4f8"/>
+  <path d="M404 340 L380 352 L432 410 Z M496 340 L520 352 L468 410 Z" fill="#e6e7ef"/>
+  <path d="M380 352 L330 500 L300 500 L360 360 Z M520 352 L570 500 L600 500 L540 360 Z" fill="#1a2449"/>
+  <path d="M438 352 L462 352 L468 374 L432 374 Z" fill="#a30d26"/>
+  <path d="M432 374 L468 374 L488 478 L450 500 L412 478 Z" fill="#d0142f"/>
+  <path d="M445 380 L452 380 L470 470 L462 475 Z" fill="#e8495f" opacity=".5"/>
+  <rect x="560" y="400" width="18" height="12" fill="#fff"/>
+  <rect x="560" y="400" width="8" height="6" fill="#3a4fa0"/>
+  <path d="M568 403 h10 M560 409 h18" stroke="#d0142f" stroke-width="1.6"/>
+
+  <!-- Kopf, zur Seite gekippt -->
+  <g transform="rotate(-14 450 340)">
+    <rect x="418" y="290" width="64" height="60" rx="18" fill="#d9853d"/>
+    <ellipse cx="353" cy="215" rx="15" ry="26" fill="#e3924b"/>
+    <ellipse cx="547" cy="215" rx="15" ry="26" fill="#e3924b"/>
+
+    <!-- Haar hinten -->
+    <path d="M348 205 C330 120 395 72 462 74 C535 77 572 125 555 205 C545 165 520 142 478 134 C432 128 382 150 348 205 Z" fill="#d9ad3c"/>
+
+    <!-- Gesicht -->
+    <path d="M356 200 C356 130 400 112 450 112 C500 112 544 130 544 200 C544 268 520 318 450 324 C380 318 356 268 356 200 Z" fill="url(#face)"/>
+    <ellipse cx="411" cy="200" rx="28" ry="17" fill="#f9d6ab"/>
+    <ellipse cx="489" cy="200" rx="28" ry="17" fill="#f9d6ab"/>
+
+    <!-- geschlossene Augen -->
+    <path d="M389 199 Q411 213 433 199" fill="none" stroke="#5a3420" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M467 199 Q489 213 511 199" fill="none" stroke="#5a3420" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M396 205 l-4 7 M411 209 l0 8 M426 205 l4 7 M474 205 l-4 7 M489 209 l0 8 M504 205 l4 7" stroke="#5a3420" stroke-width="2.4" stroke-linecap="round"/>
+    <!-- entspannte Augenbrauen -->
+    <path d="M386 176 Q410 168 436 178" fill="none" stroke="#efd27a" stroke-width="7" stroke-linecap="round"/>
+    <path d="M464 178 Q490 168 514 176" fill="none" stroke="#efd27a" stroke-width="7" stroke-linecap="round"/>
+
+    <!-- Nase, Wangen -->
+    <path d="M452 200 Q440 238 452 247 Q463 251 468 243" fill="none" stroke="#c46f30" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="392" cy="244" r="20" fill="#e5694a" opacity=".35"/>
+    <circle cx="510" cy="244" r="20" fill="#e5694a" opacity=".35"/>
+
+    <!-- offener Schlafmund + Sabber -->
+    <ellipse cx="452" cy="283" rx="23" ry="16" fill="#5e1a1a"/>
+    <ellipse cx="452" cy="291" rx="14" ry="7" fill="#b9474a"/>
+    <path d="M471 292 Q476 306 473 318 A7 7 0 1 0 486 318 Q482 304 477 290 Z" fill="#a8dcff" opacity=".85"/>
+    <path d="M412 312 Q450 334 490 312" fill="none" stroke="#c46f30" stroke-width="3" opacity=".45"/>
+
+    <!-- Haar vorne: die berühmte Welle -->
+    <path d="M565 155 C548 92 470 64 396 88 C352 102 326 140 334 186 C346 152 378 132 422 126 C474 120 528 130 565 155 Z" fill="url(#hair)"/>
+    <path d="M334 186 C324 160 330 132 352 118 C342 140 342 160 350 176 Z" fill="#f7df86"/>
+    <path d="M540 128 C500 102 440 98 392 112 M548 142 C505 118 445 112 380 128 M520 104 C480 88 430 88 400 98" fill="none" stroke="#c99a2e" stroke-width="2.5" opacity=".55" stroke-linecap="round"/>
+  </g>
+
+  <!-- Zzz -->
+  <g fill="#e9e4ff" font-family="Arial, Helvetica, sans-serif" font-weight="700">
+    <text x="600" y="150" font-size="44" opacity=".9">Z</text>
+    <text x="645" y="108" font-size="34" opacity=".7">z</text>
+    <text x="680" y="74" font-size="26" opacity=".5">z</text>
+  </g>
+</svg>

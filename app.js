@@ -144,7 +144,7 @@ let speechOwner = 0;
 
 const SOUNDS = [
   {
-    id: 'xi', name: 'Xi-Rede (APEC)', icon: '🎤', image: 'media/trump-doesend.jpg', feature: true,
+    id: 'xi', name: 'Xi-Rede (APEC)', icon: '🎤', image: 'media/trump-schlaeft.svg', feature: true,
     sub: '28 Minuten Grundsatzrede – garantiert einschläfernd',
     build(out) {
       if (!speechEl) {
@@ -306,12 +306,8 @@ function renderSounds() {
   SOUNDS.forEach(sound => {
     const el = document.createElement('div');
     el.className = 'sound' + (sound.feature ? ' feature' : '');
-    if (sound.image) {
-      el.style.backgroundImage =
-        `linear-gradient(to top, rgba(11,16,38,.95) 15%, rgba(11,16,38,.1) 75%), url("${sound.image}")`;
-    }
     el.innerHTML = `
-      ${sound.feature ? '<span class="zzz" aria-hidden="true">💤</span>' : ''}
+      ${sound.image ? `<div class="sound-img" role="img" aria-label="Karikatur: Trump schläft" style="background-image:url('${sound.image}')"></div>` : ''}
       <button class="sound-toggle" aria-pressed="false">
         <span class="sound-icon" aria-hidden="true">${sound.icon}</span>
         <span>

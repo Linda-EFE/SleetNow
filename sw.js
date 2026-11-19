@@ -1,7 +1,7 @@
-const CACHE = 'sleetnow-v2';
+const CACHE = 'sleetnow-v3';
 const FILES = [
   './', 'index.html', 'style.css', 'app.js', 'manifest.webmanifest', 'icons/icon.svg',
-  'media/trump-doesend.jpg',
+  'media/trump-schlaeft.svg',
 ];
 
 self.addEventListener('install', e => {
