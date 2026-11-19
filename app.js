@@ -320,11 +320,12 @@ function renderSounds() {
         </span>
       </button>
       <input type="range" min="0" max="1" step="0.01" aria-label="Lautstärke ${sound.name}">`;
-    const btn = $('.sound-toggle', el);
     const range = $('input', el);
     range.value = volumes[sound.id] ?? 0.6;
 
-    btn.addEventListener('click', () => {
+    // Die ganze Kachel (Foto, Symbol, Name) schaltet um – nur der Lautstärkeregler nicht.
+    el.addEventListener('click', e => {
+      if (e.target === range) return;
       if (active.has(sound.id)) stopSound(sound.id);
       else startSound(sound);
       updateSoundUI();

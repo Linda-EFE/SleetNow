@@ -77,6 +77,7 @@ h2 { font-size: 1.05rem; margin: 0 0 8px; font-weight: 600; }
   background: var(--card); border: 1px solid var(--card-border);
   border-radius: var(--radius); padding: 14px; color: var(--text);
   display: flex; flex-direction: column; gap: 10px; transition: border-color .3s, background .3s;
+  cursor: pointer; user-select: none;
 }
 .sound.on { border-color: var(--accent); background: rgba(169, 155, 255, .12); }
 .sound-toggle {
